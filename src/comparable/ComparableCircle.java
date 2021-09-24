@@ -2,8 +2,7 @@ package comparable;
 
 //import javafx.scene.shape.Circle;
 
-public class ComparableCircle extends Circle
-        implements Comparable<ComparableCircle> {
+public class ComparableCircle extends Circle implements Comparable<ComparableCircle>{
 
     public ComparableCircle() {
     }
@@ -17,9 +16,19 @@ public class ComparableCircle extends Circle
     }
 
     @Override
+    public String toString() {
+        return "ComparableCircle{" +
+                "radius=" + radius +
+                ", color='" + color + '\'' +
+                ", filled=" + filled +
+                '}';
+    }
+
+
+    @Override
     public int compareTo(ComparableCircle o) {
         if (getRadius() > o.getRadius()) return 1;
         else if (getRadius() < o.getRadius()) return -1;
-        else return 1;
+        else return 0;
     }
 }
