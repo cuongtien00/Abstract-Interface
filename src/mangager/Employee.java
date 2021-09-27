@@ -1,16 +1,16 @@
 package mangager;
 
-public class NhanVien {
+public abstract class  Employee {
     protected String code;
     protected String name;
     protected int age;
     protected String phoneNum;
     protected String email;
 
-    public NhanVien() {
+    public Employee() {
     }
 
-    public NhanVien(String code, String name, int age, String phoneNum, String email) {
+    public Employee(String code, String name, int age, String phoneNum, String email) {
         this.code = code;
         this.name = name;
         this.age = age;
@@ -57,6 +57,7 @@ public class NhanVien {
     public void setEmail(String email) {
         this.email = email;
     }
+    public abstract int getSalary();
 
     @Override
     public String toString() {

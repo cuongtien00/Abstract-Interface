@@ -1,18 +1,23 @@
 package mangager;
 
-public class NhanVienFullTime extends NhanVien{
+public class FullTimeEmployee extends Employee {
     private int bonus;
     private int fine;
     private int salary;
 
-    public NhanVienFullTime() {
+    public FullTimeEmployee() {
     }
 
-    public NhanVienFullTime(String code, String name, int age, String phoneNum, String email, int bonus, int fine, int salary) {
+    public FullTimeEmployee(String code, String name, int age, String phoneNum, String email, int bonus, int fine, int salary) {
         super(code, name, age, phoneNum, email);
         this.bonus = bonus;
         this.fine = fine;
         this.salary = salary;
+    }
+
+    @Override
+    public int getSalary() {
+        return salary+bonus-fine;
     }
 
     @Override

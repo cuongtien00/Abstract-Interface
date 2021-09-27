@@ -1,14 +1,19 @@
 package mangager;
 
-public class NhanVienPartTime extends NhanVien {
-    private double jobTime;
+public class PartTimeEmployee extends Employee {
+    private int hours;
 
-    public NhanVienPartTime() {
+    public PartTimeEmployee() {
     }
 
-    public NhanVienPartTime(String code, String name, int age, String phoneNum, String email, double jobTime) {
+    public PartTimeEmployee(String code, String name, int age, String phoneNum, String email, int hours) {
         super(code, name, age, phoneNum, email);
-        this.jobTime = jobTime;
+        this.hours = hours;
+    }
+
+    @Override
+    public int getSalary() {
+        return hours*100 ;
     }
 
     @Override
@@ -19,7 +24,7 @@ public class NhanVienPartTime extends NhanVien {
                 ", age=" + age +
                 ", phoneNum='" + phoneNum + '\'' +
                 ", email='" + email + '\'' +
-                ", jobTime=" + jobTime +
+                ", jobTime=" + hours +
                 '}';
     }
 }
